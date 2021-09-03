@@ -128,7 +128,7 @@ internal class SecureDFUPacket: DFUCharacteristic {
        - complete: The completon callback.
        - report:   Method called in case of an error.       
      */
-    func sendNext(_ prnValue: UInt16, packetsFrom range: Range<Int>, of firmware: DFUFirmware,
+    func sendNext(_ prnValue: UInt16, packetsFrom range: Range<Int>, of firmware: DFUFirmwareBle,
                   andReportProgressTo progress: DFUProgressDelegate?, on queue: DispatchQueue,
                   andCompletionTo complete: @escaping Callback,
                   onError report: ErrorCallback?) {

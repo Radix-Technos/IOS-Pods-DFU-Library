@@ -66,7 +66,7 @@ internal class DFUPacket: DFUCharacteristic {
      - parameter size:   Sizes of firmware in the current part.
      - parameter report: Method called in case of an error.
      */
-    func sendFirmwareSize(_ size: DFUFirmwareSize, onError report: ErrorCallback?) {
+    func sendFirmwareSize(_ size: DFUFirmwareSizeBle, onError report: ErrorCallback?) {
         // Get the peripheral object
         #if swift(>=5.5)
         guard let peripheral = characteristic.service?.peripheral else {
@@ -96,7 +96,7 @@ internal class DFUPacket: DFUCharacteristic {
                          Only the application size may be grater than 0.
      - parameter report: Method called in case of an error.
      */
-    func sendFirmwareSize_v1(_ size: DFUFirmwareSize, onError report: ErrorCallback?) {
+    func sendFirmwareSize_v1(_ size: DFUFirmwareSizeBle, onError report: ErrorCallback?) {
         // Get the peripheral object.
         #if swift(>=5.5)
         guard let peripheral = characteristic.service?.peripheral else {
@@ -165,7 +165,7 @@ internal class DFUPacket: DFUCharacteristic {
      - parameter queue:    The queue to dispatch progress events on.
      - parameter report:   Method called in case of an error.     
      */
-    func sendNext(_ prnValue: UInt16, packetsOf firmware: DFUFirmware,
+    func sendNext(_ prnValue: UInt16, packetsOf firmware: DFUFirmwareBle,
                   andReportProgressTo progress: DFUProgressDelegate?, on queue: DispatchQueue,
                   onError report: ErrorCallback?) {
         // Get the peripheral object.

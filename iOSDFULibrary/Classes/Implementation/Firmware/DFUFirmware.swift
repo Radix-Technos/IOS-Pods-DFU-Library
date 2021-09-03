@@ -55,7 +55,7 @@ import Foundation
 }
 
 /// The DFUFirmware object wraps the firmware file.
-@objc public class DFUFirmware : NSObject, DFUStream {
+@objc public class DFUFirmwareBle : NSObject, DFUStream {
     internal let stream: DFUStream
     
     /// The name of the firmware file.
@@ -70,7 +70,7 @@ import Foundation
     }
     
     /// The size of each component of the firmware.
-    @objc public var size: DFUFirmwareSize {
+    @objc public var size: DFUFirmwareSizeBle {
         return stream.size
     }
     
@@ -80,7 +80,7 @@ import Foundation
         return stream.parts
     }
     
-    internal var currentPartSize: DFUFirmwareSize {
+    internal var currentPartSize: DFUFirmwareSizeBle {
         return stream.currentPartSize
     }
     

@@ -2,6 +2,9 @@
 * Copyright (c) 2019, Nordic Semiconductor
 * All rights reserved.
 *
+*This project is based on https://github.com/NordicSemiconductor/IOS-Pods-DFU-Library 
+*and was changed due to conflicts with the IDOBluetooth .framework in Technos projects.
+*
 * Redistribution and use in source and binary forms, with or without modification,
 * are permitted provided that the following conditions are met:
 *
@@ -98,7 +101,7 @@ internal enum DFURemoteError : Int {
     case remoteButtonlessDFUBusy                        = 96 // 90 + 6
     case remoteButtonlessDFUNotBonded                   = 97 // 90 + 7
     
-    /// Providing the DFUFirmware is required.
+    /// Providing the DFUFirmwareBle is required.
     case fileNotSpecified                     = 101
     /// Given firmware file is not supported.
     case fileInvalid                          = 102
@@ -226,7 +229,7 @@ internal enum DFURemoteError : Int {
      Callback called when state of the DFU Service has changed.
      
      This method is called in the delegate queue specified in the
-     `DfuServiceInitiator`.
+     `DfuServiceInitiatorBle`.
      
      - parameter state: The new state fo the service.
      */
@@ -237,7 +240,7 @@ internal enum DFURemoteError : Int {
      operation has been aborted.
      
      This method is called in the delegate queue specified in the
-     `DfuServiceInitiator`.
+     `DfuServiceInitiatorBle`.
      
      - parameter error:   The error code.
      - parameter message: Error description.
